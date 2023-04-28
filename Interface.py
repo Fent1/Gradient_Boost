@@ -5,7 +5,7 @@ import pickle
 
 df = pd.read_csv("cleaned_df_withoutY.csv")
 st.title("FICO Models/Recommendations")
-with open('lr_model.p', 'rb') as f2:
+with open('gb_model.p', 'rb') as f2:
     loaded_model = pickle.load(f2)
 
 st.subheader('Choose the person :red[features] you want to include:')
