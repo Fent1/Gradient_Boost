@@ -1,8 +1,10 @@
 import pandas as pd
 import streamlit as st
 import pickle
+import os
 
 
+os.system("pip install sklearn")
 df = pd.read_csv("cleaned_df_withoutY.csv")
 st.title("Risk of HELOC Prediction")
 with open('lr_model.p', 'rb') as f2:
