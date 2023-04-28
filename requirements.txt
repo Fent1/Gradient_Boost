@@ -1,4 +1,4 @@
-sklearn==0.17.1
+sklearn==0.22.0
 pandas==1.2.5
 streamlit==0.86.0
 altair==4.1.0
