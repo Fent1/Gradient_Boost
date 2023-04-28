@@ -1,21 +1,7 @@
 import pandas as pd
 import streamlit as st
-import numpy as np
-from sklearn.datasets import load_iris
-from sklearn.neighbors import KNeighborsClassifier
 import pickle
 
-
-# train model
-# iris = load_iris()
-# X = iris['data']
-# Y = iris['target']
-#
-# knn_model = KNeighborsClassifier(n_neighbors=3)
-# knn_model.fit(X, Y)
-
-# with open('knn_model.p', 'wb') as f:
-#     pickle.dump(knn_model, f)
 
 df = pd.read_csv("cleaned_df_withoutY.csv")
 st.title("Risk of HELOC Prediction")
