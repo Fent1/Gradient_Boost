@@ -121,15 +121,26 @@ for i in options:
         predict_dic[i] = (st.slider('$\mathbf '+ i + '$', int(min(df[i])), int(max(df[i]))))
         st.divider()
 
-# Get a list to predict Risk
-risk_list = []
+# # Get a list to predict Risk
+# risk_list = []
+# for i in df.columns[1:]:
+#     if i not in predict_dic:
+#         risk_list.append(0)
+#     else:
+#         risk_list.append(predict_dic[i])
+
+# Get a dataframe to predict Risk
+risk_dic = dict()
 for i in df.columns[1:]:
     if i not in predict_dic:
-        risk_list.append(0)
+        risk_dic[i] = 0
     else:
-        risk_list.append(predict_dic[i])
+       risk_dic[i] = predict_dic[i]
+risk_df = pd.DataFrame(risk_dic)
 
-prediction = loaded_model.predict([risk_list])[0]
+
+
+prediction = loaded_model.predict([risk_df])[0]
 with st.sidebar:
     st.title("Prediction Result")
     if prediction == 1:
