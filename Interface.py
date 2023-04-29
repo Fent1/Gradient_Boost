@@ -140,7 +140,7 @@ risk_df = pd.DataFrame(risk_dic, index=[0])
 
 
 
-prediction = loaded_model.predict([risk_df])[0]
+prediction = loaded_model.predict(risk_df)[0]
 with st.sidebar:
     st.title("Prediction Result")
     if prediction == 1:
