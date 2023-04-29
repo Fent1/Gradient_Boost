@@ -136,7 +136,7 @@ for i in df.columns[1:]:
         risk_dic[i] = 0
     else:
        risk_dic[i] = predict_dic[i]
-risk_df = pd.DataFrame(risk_dic)
+risk_df = pd.DataFrame(risk_dic, index=[0])
 
 
 
