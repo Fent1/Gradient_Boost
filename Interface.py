@@ -148,4 +148,6 @@ with st.sidebar:
             st.text(k + ' is ' + str(v))
         st.divider()
         st.markdown('$Note:$ $Features$  $NOT$  $selected$  $are$ $set$ $to$ $\mathbf 0$ $by$ $default$')
+    else:
+        st.markdown('')
 
