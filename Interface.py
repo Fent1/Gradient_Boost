@@ -140,7 +140,7 @@ with st.sidebar:
             st.text(k + ' is ' + str(v))
         st.divider()
         st.markdown('$Note:$ $Features$  $NOT$  $selected$  $are$ $set$ $to$ $\mathbf 0$ $by$ $default$')
-    else:
+    elif prediction == 0:
         st.markdown('This person is :green[accepted]:thumbsup:, since he/she is classified as a :green[GOOD] risk performance. ')
         st.markdown('The features are shown below:')
         st.divider()
