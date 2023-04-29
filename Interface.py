@@ -5,7 +5,7 @@ import pickle
 
 df = pd.read_csv("cleaned_df_withoutY.csv")
 st.title("FICO Models/Recommendations")
-with open('xgb_model.pkl', 'rb') as f2:
+with open('gb_model.p', 'rb') as f2:
     loaded_model = pickle.load(f2)
 
 st.subheader('Choose the person :red[features] you want to include:')
@@ -121,26 +121,26 @@ for i in options:
         predict_dic[i] = (st.slider('$\mathbf '+ i + '$', int(min(df[i])), int(max(df[i]))))
         st.divider()
 
-# # Get a list to predict Risk
-# risk_list = []
-# for i in df.columns[1:]:
-#     if i not in predict_dic:
-#         risk_list.append(0)
-#     else:
-#         risk_list.append(predict_dic[i])
-
-# Get a dataframe to predict Risk
-risk_dic = dict()
+# Get a list to predict Risk
+risk_list = []
 for i in df.columns[1:]:
     if i not in predict_dic:
-        risk_dic[i] = 0
+        risk_list.append(0)
     else:
-       risk_dic[i] = predict_dic[i]
-risk_df = pd.DataFrame(risk_dic, index=[0])
+        risk_list.append(predict_dic[i])
+
+# # Get a dataframe to predict Risk
+# risk_dic = dict()
+# for i in df.columns[1:]:
+#     if i not in predict_dic:
+#         risk_dic[i] = 0
+#     else:
+#        risk_dic[i] = predict_dic[i]
+# risk_df = pd.DataFrame(risk_dic, index=[0])
 
 
 
-prediction = loaded_model.predict(risk_df)[0]
+prediction = loaded_model.predict([risk_list])[0]
 with st.sidebar:
     st.title("Prediction Result")
     if prediction == 1:
