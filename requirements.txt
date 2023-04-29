@@ -2,4 +2,4 @@ scikit-learn==1.0.1
 pandas
 streamlit
 altair
-xgboost
+xgboost==0.90.0
