@@ -141,7 +141,7 @@ with st.sidebar:
         st.divider()
         st.markdown('$Note:$ $Features$  $NOT$  $selected$  $are$ $set$ $to$ $\mathbf 0$ $by$ $default$')
     elif prediction == 0:
-        st.markdown('This person is :green[accepted]:thumbsup:, since he/she is classified as a :green[GOOD] risk performance. ')
+        st.markdown('This person is :green[ACCEPTED]:thumbsup:, since he/she is classified as a :green[GOOD] risk performance. ')
         st.markdown('The features are shown below:')
         st.divider()
         for k, v in predict_dic.items():
