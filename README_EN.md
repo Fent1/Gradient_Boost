@@ -1,4 +1,5 @@
-# AdvancedPython
+# Customer creditworthiness evaluation model
+[Chinese](./README.md) | [English]
 Run the commnand "streamlit run interface.py" on command line to run this application
 Or click the link https://fent1-advancedpython-interface-evd5ob.streamlit.app/ to access my application.
 
